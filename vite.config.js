@@ -13,9 +13,9 @@ export default defineConfig(() => {
              target: 'https://api-blog-ten.vercel.app',
              changeOrigin: true,
              secure: false,      
-             ws: true,
-         }
-    }
+             ws: true,         }
+    },
+    host: true
     },
   };
 });
