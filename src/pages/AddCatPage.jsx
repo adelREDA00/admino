@@ -89,7 +89,7 @@ export default function AddingPage() {
 
 
   const { token } = useContext(AuthContext);
-  const { data1, loading1, error1, reFetch } = useFetch("/api/categories/", token);
+  const { data1, loading1, error1, reFetch } = useFetch("https://api-blog-ten.vercel.app/api/categories/", token);
 
 
   const USERLIST = Array.isArray(data1) ? data1 : [];
@@ -252,7 +252,7 @@ export default function AddingPage() {
   const handleDeleteall = async () => {
     try {
       const selectedIds = selected.map((id) =>id); // Assuming the selected IDs are stored in the "selected" array
-      const res = await axios.delete("/api/categories", {
+      const res = await axios.delete("https://api-blog-ten.vercel.app/api/categories", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -278,7 +278,7 @@ const handleEditopen = async () => {
         name: name
       };
       
-      const response = await axios.put(`/api/categories/${currentId}`, updatedCategory, {
+      const response = await axios.put(`https://api-blog-ten.vercel.app/api/categories/${currentId}`, updatedCategory, {
         headers: {
           Authorization: `Bearer ${token}`
         }
