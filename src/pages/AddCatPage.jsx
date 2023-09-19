@@ -105,7 +105,7 @@ export default function AddingPage() {
   
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`/api/categories/${currentId}`, {
+      const res = await axios.delete(`https://api-blog-ten.vercel.app/api/categories/${currentId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
