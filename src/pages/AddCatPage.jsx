@@ -91,7 +91,9 @@ export default function AddingPage() {
   const { token } = useContext(AuthContext);
   const { data1, loading1, error1, reFetch } = useFetch("/api/categories/", token);
 
-  const USERLIST = data1
+
+  const USERLIST = Array.isArray(data1) ? data1 : [];
+
   //tracking the current cat id
   const [currentId , setcurrentId] = useState(null)
   const [currentname , setcurrentname] = useState('')
