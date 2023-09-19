@@ -129,7 +129,7 @@ export default function AddingPage() {
   const handleAddCategory = async (inputValue) => {
     try {
       const res = await axios.post(
-        "/api/categories/",
+        "https://api-blog-ten.vercel.app/api/categories/",
         { name: inputValue }, // Include the category name in the request payload
         {
           headers: {
