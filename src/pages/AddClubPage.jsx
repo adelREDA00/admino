@@ -153,7 +153,7 @@ export default function AddingPage() {
   
     try {
       const res = await axios.post(
-        "/api/club",
+        "https://api-blog-ten.vercel.app/api/club",
         clubsData, // Send the modified array of club objects
         {
           headers: {
