@@ -108,7 +108,7 @@ const CatModalObjPlayer = ({icon , name,handleAddCategory,handleClose }) => {
 
 
   const [clubs, setClubs] = useState([]);
-  useFetchData('/api/club/', setClubs);
+  useFetchData('https://api-blog-ten.vercel.app/api/club/', setClubs);
 
 
   return (

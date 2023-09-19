@@ -136,8 +136,8 @@ export default function UserPage() {
   }, [handleCloseUpdate]);
   //handleCloseUpdate  as dep 
 
+  const USERLIST = Array.isArray(data1) ? data1 : [];
 
-const USERLIST=data1
 
   const [currentId , setcurrentId] = useState(null)
   const [currentname , setcurrentname] = useState('')

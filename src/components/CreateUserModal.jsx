@@ -73,7 +73,7 @@ export default function CreateUserModal({openCreate,logName,setOpenE,handleClose
     };
   
     try {
-      const res = await axios.post("/api/auth/register", {
+      const res = await axios.post("https://api-blog-ten.vercel.app/api/auth/register", {
         username: firstName,
         email: email,
         password: newPassword,
