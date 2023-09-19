@@ -26,9 +26,10 @@ const SORT_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function BlogPage() {
-  const { data1, loading1, error1,reFetch } = useFetch(`/api/posts/`);
+  const { data1, loading1, error1,reFetch } = useFetch(`https://api-blog-ten.vercel.app/api/posts/`);
 
-  
+  const postsArr = Array.isArray(data1) ? data1 : [];
+
 
 
   const [openFilter, setOpenFilter] = useState(false);
@@ -106,10 +107,10 @@ export default function BlogPage() {
         </Stack>
 
         {checked ? (
-          <Tabel posts={data1}  reFetch={reFetch} />
+          <Tabel posts={postsArr}  reFetch={reFetch} />
         ) : (
           <Grid container spacing={3}>
-            {data1.map((post, index) => (
+            {postsArr.map((post, index) => (
               <BlogPostCard key={post._id} post={post} index={index} />
             ))}
           </Grid>

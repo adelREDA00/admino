@@ -90,9 +90,9 @@ export default function AddingPage() {
 
 
   const { token } = useContext(AuthContext);
-  const { data1, loading1, error1, reFetch } = useFetch("/api/tags/", token);
+  const { data1, loading1, error1, reFetch } = useFetch("https://api-blog-ten.vercel.app/api/tags/", token);
 
-  const USERLIST = data1
+  const USERLIST = Array.isArray(data1) ? data1 : [];
   //tracking the current tag id
 
   const [currentId , setcurrentId] = useState(null)
@@ -106,7 +106,7 @@ export default function AddingPage() {
 
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`/api/tags/${currentId}`, {
+      const res = await axios.delete(`https://api-blog-ten.vercel.app/api/tags/${currentId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -131,7 +131,7 @@ export default function AddingPage() {
   const handleAddCategory = async (inputValue) => {
     try {
       const res = await axios.post(
-        "/api/tags/",
+        "https://api-blog-ten.vercel.app/api/tags/",
         { name: inputValue }, // Include the tag name in the request payload
         {
           headers: {
@@ -270,7 +270,7 @@ export default function AddingPage() {
           name: name
         };
         
-        const response = await axios.put(`/api/tags/${currentId}`, updatedCategory, {
+        const response = await axios.put(`https://api-blog-ten.vercel.app/api/tags/${currentId}`, updatedCategory, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -292,7 +292,7 @@ const cat = "Tag"
     try {
       const selectedIds = selected.map((id) => id); // Assuming the selected IDs are stored in the "selected" array
  
-      const res = await axios.delete("/api/tags", {
+      const res = await axios.delete("https://api-blog-ten.vercel.app/api/tags", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

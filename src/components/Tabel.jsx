@@ -106,7 +106,7 @@ const trackId = (id,name)=>{
   
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`/api/posts/${currentId}`, {
+      const res = await axios.delete(`https://api-blog-ten.vercel.app/api/posts/${currentId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -219,7 +219,7 @@ const trackId = (id,name)=>{
   const handleDeleteall = async () => {
     try {
       const selectedIds = selected.map((id) =>id); // Assuming the selected IDs are stored in the "selected" array
-      const res = await axios.delete("/api/posts", {
+      const res = await axios.delete("https://api-blog-ten.vercel.app/api/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

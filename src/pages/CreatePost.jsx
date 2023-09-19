@@ -87,13 +87,13 @@ const CreatePostForm = () => {
         data.append("file", file);
         postData.photo = filename;
         try {
-          await axios.post("/api/upload", data);
+          await axios.post("https://api-blog-ten.vercel.app/api/upload", data);
         } catch (err) {}
       }
 
       try {
          
-       const res =  await axios.post('/api/posts/', postData, config);
+       const res =  await axios.post('https://api-blog-ten.vercel.app/api/posts/', postData, config);
 
         // Handle success or any additional logic
       
@@ -148,12 +148,12 @@ const CreatePostForm = () => {
 
 
 
-  useFetchData('/api/categories/', setCategories);
-  useFetchData('/api/club/', setClubs);
-  useFetchData('/api/league/', setLeague);
-  useFetchData('/api/country/', setCountry);
-  useFetchData('/api/tags/', setTags);
-  useFetchData('/api/player/', setPlayer);
+  useFetchData('https://api-blog-ten.vercel.app/api/categories/', setCategories);
+  useFetchData('https://api-blog-ten.vercel.app/api/club/', setClubs);
+  useFetchData('https://api-blog-ten.vercel.app/api/league/', setLeague);
+  useFetchData('https://api-blog-ten.vercel.app/api/country/', setCountry);
+  useFetchData('https://api-blog-ten.vercel.app/api/tags/', setTags);
+  useFetchData('https://api-blog-ten.vercel.app/api/player/', setPlayer);
 
 
   const handleTagChange = (event, selectedTags) => {

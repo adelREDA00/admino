@@ -27,7 +27,7 @@ const EditPostForm  = () => {
 
 
 
-  const { data1, loading1, error1,reFetch } = useFetch(`/api/posts/${Id}`);
+  const { data1, loading1, error1,reFetch } = useFetch(`https://api-blog-ten.vercel.app/api/posts/${Id}`);
 // !!!!!---get the user name from the token ---!!!!
 
 const [postValues, setPostValues] = useState({
@@ -116,13 +116,13 @@ useEffect(() => {
         data.append("file", file);
         postData.photo = filename;
         try {
-          await axios.post("/api/upload", data);
+          await axios.post("https://api-blog-ten.vercel.app/api/upload", data);
         } catch (err) {}
       }
 
       try {
          
-        await axios.put(`/api/posts/${Id}`, postData, config);
+        await axios.put(`https://api-blog-ten.vercel.app/api/posts/${Id}`, postData, config);
         // Handle success or any additional logic
      
              //open the success
@@ -174,11 +174,11 @@ useEffect(() => {
   const [tags, setTags] = useState([]);
 
 
-  useFetchData('/api/categories/', setCategories);
-  useFetchData('/api/club/', setClubs);
-  useFetchData('/api/league/', setLeague);
-  useFetchData('/api/country/', setCountry);
-  useFetchData('/api/tags/', setTags);
+  useFetchData('https://api-blog-ten.vercel.app/api/categories/', setCategories);
+  useFetchData('https://api-blog-ten.vercel.app/api/club/', setClubs);
+  useFetchData('https://api-blog-ten.vercel.app/api/league/', setLeague);
+  useFetchData('https://api-blog-ten.vercel.app/api/country/', setCountry);
+  useFetchData('https://api-blog-ten.vercel.app/api/tags/', setTags);
 
   const handleTagChange = (event, selectedTags) => {
     setPostValues({ ...postValues, tags: selectedTags });
@@ -187,7 +187,7 @@ useEffect(() => {
   const handleCatChange = (event, selectedCat) => {
     setPostValues({ ...postValues, categories: selectedCat });
   };
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://api-blog-ten.vercel.app/images/";
   const [coverImage, setCoverImage] = useState(data1.photo ? PF + data1.photo : '');
 
   useEffect(() => {
