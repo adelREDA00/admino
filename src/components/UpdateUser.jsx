@@ -19,7 +19,7 @@ export default function UpdateUser({openUpdate,handleCloseUpdate,currentId}) {
           },
         };
   
-        const res = await axios.get(`https://api-blog-ten.vercel.app/api/users/${currentId}`, config);
+        const res = await axios.get(`https://apiblognode.onrender.com/api/users/${currentId}`, config);
         // Handle success or any additional logic
         setData(res.data)
         
@@ -107,7 +107,7 @@ export default function UpdateUser({openUpdate,handleCloseUpdate,currentId}) {
     };
   
     try {
-      const res = await axios.put(`https://api-blog-ten.vercel.app/api/users/${currentId}`, {
+      const res = await axios.put(`https://apiblognode.onrender.com/api/users/${currentId}`, {
         username: firstName,
         email: email,
         password: newPassword,

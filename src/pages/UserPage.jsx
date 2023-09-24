@@ -123,7 +123,7 @@ export default function UserPage() {
           },
         };
   
-        const res = await axios.get(`https://api-blog-ten.vercel.app/api/users/`, config);
+        const res = await axios.get(`https://apiblognode.onrender.com/api/users/`, config);
         // Handle success or any additional logic
         setData1(res.data)
       } catch (error) {
@@ -149,7 +149,7 @@ export default function UserPage() {
    //delete
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`https://api-blog-ten.vercel.app/api/users/${currentId}`, {
+      const res = await axios.delete(`https://apiblognode.onrender.com/api/users/${currentId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -262,7 +262,7 @@ export default function UserPage() {
     try {
       const selectedIds = selected.map((id) =>id); // Assuming the selected IDs are stored in the "selected" array
      
-      const res = await axios.delete("https://api-blog-ten.vercel.app/api/users/", {
+      const res = await axios.delete("https://apiblognode.onrender.com/api/users/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

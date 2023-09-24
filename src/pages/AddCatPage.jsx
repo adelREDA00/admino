@@ -89,7 +89,7 @@ export default function AddingPage() {
 
 
   const { token } = useContext(AuthContext);
-  const { data1, loading1, error1, reFetch } = useFetch("https://api-blog-ten.vercel.app/api/categories/", token);
+  const { data1, loading1, error1, reFetch } = useFetch("https://apiblognode.onrender.com/api/categories/", token);
 
 
   const USERLIST = Array.isArray(data1) ? data1 : [];
@@ -105,7 +105,7 @@ export default function AddingPage() {
   
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`https://api-blog-ten.vercel.app/api/categories/${currentId}`, {
+      const res = await axios.delete(`https://apiblognode.onrender.com/api/categories/${currentId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -129,7 +129,7 @@ export default function AddingPage() {
   const handleAddCategory = async (inputValue) => {
     try {
       const res = await axios.post(
-        "https://api-blog-ten.vercel.app/api/categories/",
+        "https://apiblognode.onrender.com/api/categories/",
         { name: inputValue }, // Include the category name in the request payload
         {
           headers: {
@@ -252,7 +252,7 @@ export default function AddingPage() {
   const handleDeleteall = async () => {
     try {
       const selectedIds = selected.map((id) =>id); // Assuming the selected IDs are stored in the "selected" array
-      const res = await axios.delete("https://api-blog-ten.vercel.app/api/categories", {
+      const res = await axios.delete("https://apiblognode.onrender.com/api/categories", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -278,7 +278,7 @@ const handleEditopen = async () => {
         name: name
       };
       
-      const response = await axios.put(`https://api-blog-ten.vercel.app/api/categories/${currentId}`, updatedCategory, {
+      const response = await axios.put(`https://apiblognode.onrender.com/api/categories/${currentId}`, updatedCategory, {
         headers: {
           Authorization: `Bearer ${token}`
         }

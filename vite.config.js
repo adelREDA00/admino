@@ -12,7 +12,7 @@ export default defineConfig(() => {
       proxy: {
         '/api': {
           // Ensure this is the correct URL for your API
-          target: 'https://api-blog-ten.vercel.app',
+          target: 'https://apiblognode.onrender.com',
           changeOrigin: true,
           // Keep secure as true for SSL security
           secure: true,

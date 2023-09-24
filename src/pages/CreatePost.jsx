@@ -87,13 +87,13 @@ const CreatePostForm = () => {
         data.append("file", file);
         postData.photo = filename;
         try {
-          await axios.post("https://api-blog-ten.vercel.app/api/upload", data);
+          await axios.post("https://apiblognode.onrender.com/api/upload", data);
         } catch (err) {}
       }
 
       try {
          
-       const res =  await axios.post('https://api-blog-ten.vercel.app/api/posts/', postData, config);
+       const res =  await axios.post('https://apiblognode.onrender.com/api/posts/', postData, config);
 
         // Handle success or any additional logic
       
@@ -148,12 +148,12 @@ const CreatePostForm = () => {
 
 
 
-  useFetchData('https://api-blog-ten.vercel.app/api/categories/', setCategories);
-  useFetchData('https://api-blog-ten.vercel.app/api/club/', setClubs);
-  useFetchData('https://api-blog-ten.vercel.app/api/league/', setLeague);
-  useFetchData('https://api-blog-ten.vercel.app/api/country/', setCountry);
-  useFetchData('https://api-blog-ten.vercel.app/api/tags/', setTags);
-  useFetchData('https://api-blog-ten.vercel.app/api/player/', setPlayer);
+  useFetchData('https://apiblognode.onrender.com/api/categories/', setCategories);
+  useFetchData('https://apiblognode.onrender.com/api/club/', setClubs);
+  useFetchData('https://apiblognode.onrender.com/api/league/', setLeague);
+  useFetchData('https://apiblognode.onrender.com/api/country/', setCountry);
+  useFetchData('https://apiblognode.onrender.com/api/tags/', setTags);
+  useFetchData('https://apiblognode.onrender.com/api/player/', setPlayer);
 
 
   const handleTagChange = (event, selectedTags) => {

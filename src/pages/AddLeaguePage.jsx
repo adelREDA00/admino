@@ -90,11 +90,11 @@ function applySortFilter(array, comparator, query) {
 
 export default function AddingPage() {
 
-  const PF = "https://api-blog-ten.vercel.app/images/";
+  const PF = "https://apiblognode.onrender.com/images/";
 
 
   const { token } = useContext(AuthContext);
-  const { data1, loading1, error1, reFetch } = useFetch("https://api-blog-ten.vercel.app/api/league/", token);
+  const { data1, loading1, error1, reFetch } = useFetch("https://apiblognode.onrender.com/api/league/", token);
 
   const USERLIST = Array.isArray(data1) ? data1 : [];
   //tracking the current cat id
@@ -108,7 +108,7 @@ export default function AddingPage() {
   
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`https://api-blog-ten.vercel.app/api/league/${currentId}`, {
+      const res = await axios.delete(`https://apiblognode.onrender.com/api/league/${currentId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -144,7 +144,7 @@ export default function AddingPage() {
     // Check if file exists and add it to the data object
     if (file) {
       try {
-        await axios.post("https://api-blog-ten.vercel.app/api/upload", data);
+        await axios.post("https://apiblognode.onrender.com/api/upload", data);
       } catch (err) {
         console.error("Error uploading image:", err);
       }
@@ -152,7 +152,7 @@ export default function AddingPage() {
   
     try {
       const res = await axios.post(
-        "https://api-blog-ten.vercel.app/api/league",
+        "https://apiblognode.onrender.com/api/league",
         clubsData, // Send the modified array of club objects
         {
           headers: {
@@ -276,7 +276,7 @@ export default function AddingPage() {
       const API = 'RbKazNyh5hA952DB24RO1ifmMblxF5q24y1Gagt20D6zQ0J3QRqImedN9BbZ' 
   
       try {
-        const response = await axios.get(`https://api-blog-ten.vercel.app/api/football/leagues?api_token=${API} `);
+        const response = await axios.get(`https://apiblognode.onrender.com/api/football/leagues?api_token=${API} `);
         setApiData(response.data.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -307,7 +307,7 @@ export default function AddingPage() {
     try {
       const selectedIds = selected.map((id) =>id); // Assuming the selected IDs are stored in the "selected" array
     
-      const res = await axios.delete("https://api-blog-ten.vercel.app/api/league", {
+      const res = await axios.delete("https://apiblognode.onrender.com/api/league", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -342,7 +342,7 @@ export default function AddingPage() {
           name: name
         };
         
-        const response = await axios.put(`https://api-blog-ten.vercel.app/api/league/${currentId}`, updatedCategory, {
+        const response = await axios.put(`https://apiblognode.onrender.com/api/league/${currentId}`, updatedCategory, {
           headers: {
             Authorization: `Bearer ${token}`
           }

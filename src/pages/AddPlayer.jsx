@@ -88,12 +88,12 @@ function applySortFilter(array, comparator, query) {
 }
 
 export default function AddingPage() {
-  const PF = "https://api-blog-ten.vercel.app/images/";
+  const PF = "https://apiblognode.onrender.com/images/";
 
 
 
   const { token } = useContext(AuthContext);
-  const { data1, loading1, error1, reFetch } = useFetch("https://api-blog-ten.vercel.app/api/player/", token);
+  const { data1, loading1, error1, reFetch } = useFetch("https://apiblognode.onrender.com/api/player/", token);
 
   const USERLIST = Array.isArray(data1) ? data1 : [];
 //tracking the current cat id
@@ -107,7 +107,7 @@ const trackId = (id,name)=>{
   
   const handleDelete = async () => {
     try {
-      const res = await axios.delete(`https://api-blog-ten.vercel.app/api/player/${currentId}`, {
+      const res = await axios.delete(`https://apiblognode.onrender.com/api/player/${currentId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -131,7 +131,7 @@ const trackId = (id,name)=>{
   const handleAddCategory = async (inputValue) => {
     try {
       const res = await axios.post(
-        "https://api-blog-ten.vercel.app/api/player/",
+        "https://apiblognode.onrender.com/api/player/",
         { name: inputValue }, // Include the country name in the request payload
         {
           headers: {
@@ -160,7 +160,7 @@ const trackId = (id,name)=>{
     // Check if file exists and add it to the data object
     if (file) {
       try {
-        await axios.post("https://api-blog-ten.vercel.app/api/upload", data);
+        await axios.post("https://apiblognode.onrender.com/api/upload", data);
       } catch (err) {
         console.error("Error uploading image:", err);
       }
@@ -168,7 +168,7 @@ const trackId = (id,name)=>{
   
     try {
       const res = await axios.post(
-        "https://api-blog-ten.vercel.app/api/player",
+        "https://apiblognode.onrender.com/api/player",
         playerData, // Send the modified array of club objects
         {
           headers: {
@@ -301,7 +301,7 @@ const trackId = (id,name)=>{
     try {
       const selectedIds = selected.map((id) =>id); // Assuming the selected IDs are stored in the "selected" array
     
-      const res = await axios.delete("https://api-blog-ten.vercel.app/api/player", {
+      const res = await axios.delete("https://apiblognode.onrender.com/api/player", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -328,7 +328,7 @@ const handleEditopen = async () => {
         name: name
       };
       
-      const response = await axios.put(`https://api-blog-ten.vercel.app/api/player/${currentId}`, updatedCategory, {
+      const response = await axios.put(`https://apiblognode.onrender.com/api/player/${currentId}`, updatedCategory, {
         headers: {
           Authorization: `Bearer ${token}`
         }

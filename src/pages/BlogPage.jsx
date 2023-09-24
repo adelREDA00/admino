@@ -26,7 +26,7 @@ const SORT_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function BlogPage() {
-  const { data1, loading1, error1,reFetch } = useFetch(`https://api-blog-ten.vercel.app/api/posts/`);
+  const { data1, loading1, error1,reFetch } = useFetch(`https://apiblognode.onrender.com/api/posts/`);
 
   const postsArr = Array.isArray(data1) ? data1 : [];
 
