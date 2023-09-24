@@ -61,7 +61,7 @@ export default function BlogPostCard({ post, index }) {
 
   const timestamp = post.createdAt;
   const date = timestamp.split("T")[0];
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://apiblognode.onrender.com/images/";
 
   const latestPostLarge = index === 0;
   const latestPost = index === 1 || index === 2;
