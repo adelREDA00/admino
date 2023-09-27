@@ -156,7 +156,7 @@ const trackId = (id,name)=>{
     // Check if file exists and add it to the data object
     if (file) {
       try {
-        await axios.post("https://apiblognode.onrender.com/api/upload", data);
+        await axios.post("http://localhost:5000/api/upload", data);
       } catch (err) {
         console.error("Error uploading image:", err);
       }
