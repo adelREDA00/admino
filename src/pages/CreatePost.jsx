@@ -87,7 +87,7 @@ const CreatePostForm = () => {
         data.append("file", file);
         postData.photo = filename;
         try {
-          await axios.post("https://apiblognode.onrender.com/api/upload", data);
+          await axios.post("http://localhost:5000/api/upload", data);
         } catch (err) {}
       }
 
